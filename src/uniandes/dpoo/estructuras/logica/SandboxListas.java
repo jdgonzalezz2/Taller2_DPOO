@@ -1,5 +1,5 @@
 package uniandes.dpoo.estructuras.logica;
-
+import java.util.Random;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -296,11 +296,10 @@ public class SandboxListas
      */
     public void generarEnteros( int cantidad, int minimo, int maximo )
     {
-    	listaEnteros = new ArrayList<>();
-        for (int i = 0; i < cantidad; i++) {
-            int nuevoEntero = (int) (Math.random() * (maximo - minimo + 1) + minimo);
-            listaEnteros.add(nuevoEntero);
-        }
-    }
+        listaEnteros = new ArrayList<>();
+        Random rand = new Random();
 
-}
+        for (int i = 0; i < cantidad; i++) {
+            listaEnteros.add(rand.nextInt(maximo - minimo + 1) + minimo);
+        }
+   }}
